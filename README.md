@@ -1,30 +1,30 @@
-# Web Development Project 2 - *Name of App Here*
+# Web Development Project 2 - Flashcard Study Tool
 
-Submitted by: **Your Name Here**
+Submitted by: Krishna Choudhary
 
-This web app: **insert description**
+This web app: Flashcard study tool for computer science trivia. Users can view a title, description, and total number of flashcards on the start screen. Once started, a single flashcard (showing either a question or its answer) is displayed at a time. Clicking the flashcard toggles between the question and answer, and clicking the Next button displays a random new flashcard.
 
-Time spent: **X** hours spent in total
+Time spent: 3 hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [ ] **The title of the card set and some information about it, such as a short description and the total number of cards are displayed**
-- [ ] **A single card at a time is displayed, only showing one of the components of the information pair**
-- [ ] **A list of card pairs is created**
-- [ ] **Clicking on the card shows the corresponding component of the information pair**
-- [ ] **Clicking the next button displays a random new card**
+- [x] **The title of the card set and some information about it, such as a short description and the total number of cards are displayed**
+- [x] **A single card at a time is displayed, only showing one of the components of the information pair**
+- [x] **A list of card pairs is created**
+- [x] **Clicking on the card shows the corresponding component of the information pair**
+- [x] **Clicking the next button displays a random new card**
 
 The following **optional** features are implemented:
 
-- [ ] Cards contains images in addition to or in place of text
-- [ ] Cards have different visual styles such as color based on their category
-  - [ ] *visual style implemented*
+- [x] Cards contains images in addition to or in place of text
+- [x] Cards have different visual styles such as color based on their category
+  - [x] *visual style implemented*
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you added to improve the site's functionality!
+- No additional features have been implemented for this project version.
 
 ## Video Walkthrough
 

@@ -1,35 +1,75 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, { useState } from "react";
+import "./App.css";
+import StartScreen from "./components/StartScreen/StartScreen";
+import FlashcardLayout from "./components/FlashcardLayout/FlashcardLayout";
 
-function App() {
-  const [count, setCount] = useState(0)
+
+const App = () => {
+
+  const flashcards = [
+    {
+      question: "What does CPU stand for?",
+      answer: "Central Processing Unit"
+    },
+    {
+      question: "What is RAM?",
+      answer: "Random Access Memory"
+    },
+    {
+      question: "What does HTTP stand for?",
+      answer: "HyperText Transfer Protocol"
+    },
+    {
+      question: "What is the main language for web development?",
+      answer: "JavaScript"
+    },
+    {
+      question: "What does CSS stand for?",
+      answer: "Cascading Style Sheets"
+    },
+    // Add more flashcards as needed...
+  ];
+  
+  // State
+  const [showStartScreen, setShowStartScreen] = useState(true);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
+
+  // Start button handler
+  const handleStart = () => {
+    setShowStartScreen(false);
+  };
+
+  // Flip the card
+  const handleFlip = () => {
+    setIsFlipped(prev => !prev);
+  };
+
+  // Next card (random)
+  const handleNextCard = () => {
+    const randomIndex = Math.floor(Math.random() * flashcards.length);
+    setCurrentIndex(randomIndex);
+    setIsFlipped(false);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="app">
+      {showStartScreen ? (
+        <StartScreen 
+          flashcardsCount={flashcards.length}
+          onStart={handleStart}
+        />
+      ) : (
+        <FlashcardLayout 
+          flashcards={flashcards}
+          currentIndex={currentIndex}
+          isFlipped={isFlipped}
+          onFlip={handleFlip}
+          onNextCard={handleNextCard}
+        />
+      )}
+    </div>
+  );
 }
 
-export default App
+export default App;
